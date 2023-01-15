@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FeedModule } from './feed/feed.module';
+import { UserModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { FeedModule } from './feed/feed.module';
       synchronize: true,
     }),
     FeedModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

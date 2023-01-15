@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FeedService } from './services/feed.service';
 import { FeedController } from './controllers/feed.controller';
-import { FeedPostEntity } from './modules/post.entity';
+import { FeedPostEntity } from './models/post.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([FeedPostEntity])],
