@@ -5,6 +5,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FeedModule } from './feed/feed.module';
 import { UserModule } from './auth/auth.module';
+import { RoleGuard } from './auth/guard/role.guard';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
