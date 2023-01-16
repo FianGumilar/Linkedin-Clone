@@ -73,4 +73,15 @@ export class AuthService {
           })
         )
       )}
+
+      findUserbyId(id: number): Observable<User> {
+        return from(
+          this.userRepository.findOne({ where: { id: id }, relations: ['feedPostEntity']})
+        ).pipe(
+          map((user: User) => {
+            delete user.password;
+            return user;
+          })
+        )
+      }
 }

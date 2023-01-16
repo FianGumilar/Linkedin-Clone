@@ -4,5 +4,5 @@ export interface FeedPost {
     id?: number;
     body?: string;
     createdAt?: Date;
-    auhtor?: User
+    author?: User
 }

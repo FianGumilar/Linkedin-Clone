@@ -14,7 +14,7 @@ export class FeedService {
     ) {}
 
     createPost(user: User, feedPost: FeedPost): Observable<FeedPost> {
-        feedPost.auhtor = user;
+        feedPost.author = user;
         return from (this.feedPostRepository.save(feedPost));
     }
 
@@ -36,5 +36,11 @@ export class FeedService {
 
     deletePost(id: number): Observable<DeleteResult> {
         return from(this.feedPostRepository.delete(id));
+    }
+
+    findPostById(id: number): Observable<FeedPost> {
+        return from(
+            this.feedPostRepository.findOne({ where: {id: id}, relations: ['author']})
+        )
     }
 }

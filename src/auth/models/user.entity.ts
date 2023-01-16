@@ -1,6 +1,6 @@
 import { IsEmail } from "class-validator";
 import { FeedPostEntity } from "src/feed/models/post.entity";
-import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany, JoinColumn } from "typeorm";
 import { Role } from "./role.enum";
 
 @Entity('users_entity')

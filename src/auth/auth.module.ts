@@ -8,6 +8,7 @@ import { JwtGuard } from './guard/jwt.guard';
 import { JwtStrategy } from './guard/jwt.strategy'; 
 import { RoleGuard } from './guard/role.guard';
 
+
 @Module({
   imports: [JwtModule.registerAsync({
     useFactory: () => ({
@@ -16,6 +17,7 @@ import { RoleGuard } from './guard/role.guard';
     })
   }) ,TypeOrmModule.forFeature([UserEntity])],
   controllers: [AuthController],
-  providers: [AuthService, JwtGuard, JwtStrategy, RoleGuard]
+  providers: [AuthService, JwtGuard, JwtStrategy, RoleGuard],
+  exports: [AuthService]
 })
-export class UserModule {}
+export class AuthModule {}
